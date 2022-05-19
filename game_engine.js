@@ -44,6 +44,31 @@ function chek_horizontal(board) {
 
 
 
+// from Console Debugger
+function checkVerticals(board) {
+    debugger;
+    result = false;
+    for (h = 0; h < board.length; h++) {
+        for (v = 0; v < board[h].length; v++) {
+            if (board[h][0] != board[h][v]) {
+                console.log("inner false");
+            } else { console.log("inner ok") };
+        }
+    }
+}
+
+//From Console Debugger
+function checkHorizontals(board) {
+    debugger;
+    result = false;
+    for (h = 0; h < board.length; h++) {
+        for (v = 0; v < board[h].length; v++) {
+            if (board[0][h] != board[v][h]) {
+                console.log("inner false");
+            } else { console.log("inner ok") };
+        }
+    }
+}
 
 // function check_diagonals_left_to_right(board) {//always true
 //    debugger;
