@@ -2,6 +2,7 @@ const MIN_BOARD_SIZE = 3;
 const MAX_BOARD_SIZE = 9;
 const size = 3;
 
+
 function createBoard(size) {
     if (size < MIN_BOARD_SIZE || size > MAX_BOARD_SIZE) {
         size = 3
@@ -13,33 +14,33 @@ function createBoard(size) {
 let board = createBoard(size);
 
 
-function checkVerticals(board) {
-    board.forEach(element => {
-        for (i of element) {
-            if (i == ++i ? true : false) { win() }// counter ++, if counter = size ()=>win
+// function checkVerticals(board) {
+//     board.forEach(element => {
+//         for (i of element) {
+//             if (i == ++i ? true : false) { win() }// counter ++, if counter = size ()=>win
 
-            else { break }
+//             else { break }
 
-        }
-    });
-}
-table= [[1,2,3]
-        [2,2,2]   
-        [1,2,3] ] 
+//         }
+//     });
+// }
+let table = [[1, 2, 3]
+[2, 2, 2]
+[1, 2, 3]]
 
 
-function chek_horizontal(board) {
-    debugger;
-    for (x of table) {
-        for (y of table[x]) {
-            if (y == y + 1) {console.log(`${y}=${y+1}`); }
-            else { break }
-        
-        }
+// function chek_horizontal(board) {
+//     debugger;
+//     for (x of table) {
+//         for (y of table[x]) {
+//             if (y == y + 1) {console.log(`${y}=${y+1}`); }
+//             else { break }
 
-    }
-    console.log("nada");
-}
+//         }
+
+//     }
+//     console.log("nada");
+// }
 
 
 
@@ -70,28 +71,40 @@ function checkHorizontals(board) {
     }
 }
 
-// function check_diagonals_left_to_right(board) {//always true
-//    debugger;
-//     for (let board_index = 0; board_index < board.length; board_index++) {
-//         if (board_index[board_index] == ++board_index[board_index]) {
-//             win();
-//             break;
+function check_diagonals_left_to_right(board) {//works 23/5
+
+    for (i = 0; i < board.length-1;i++) {
+        
+        if (board[i][i] == board[i+1][i+1]) {
+            console.log(`${board[i][i] == board[i+1][i+1]}`);
+        }
+        else {
+            console.log(false);
+            // board[i][i] +"y^2r"+ board[i+1][i+1]
+        }
+    }
+}
+
+// function check_diagonals_right_left(board) {
+//     for (i of board) {
+//         if ([i][i] == [i + 1][i + 1]) {
+//             console.log("win");
 //         }
 //         else {
-//             check_diagonals_left_to_right;
+//             console.log("no win");
 //         }
 //     }
 // }
 
-// function check_diagonals_right_to_left(board){
-//    let banana=0;
-//     for (let board_index = board.length-1; board_index > 0; board_index--) {
-//         // debugger
-//         if (board_index[banana] == --board_index[++banana]) {
-//             console.log("array num: "+banana +"index : " +board_index+" match");
+// function check_diagonals_right_to_left(board) {
+//     let horizontal = 0;
+//     for (let vertical = board.length - 1; vertical > 0;) {
+//         debugger
+//         if ([vertical][horizontal] == --[vertical][++horizontal]) {
+//             console.log("array num: " + horizontal + "index : " + vertical + " match");
 //         }
 //         else {
-//             console.log(board_index + "no match");
+//             console.log(vertical + "no match");
 //         }
 
 //     }
@@ -101,3 +114,5 @@ function checkHorizontals(board) {
 
 function win() { console.log("win!") }
 
+// board2= [[1,0,0,0],[0,1,0,0],[0,0,1,0],[0,0,0,1]
+        //  ]
